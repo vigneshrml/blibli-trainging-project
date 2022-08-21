@@ -23,6 +23,13 @@
         v-for="(singleData, i) in data.checkBoxs"
         :key="i"
       >
+        <!-- <input
+          type="checkbox"
+          class="filter-checkbox-option"
+          :name="singleData"
+          @change="handleCheck($event)"
+          :value="{ category: data.category, specification: singleData }"
+        /> -->
         <input
           type="checkbox"
           class="filter-checkbox-option"

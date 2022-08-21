@@ -5,7 +5,7 @@
       <div class="outer-card">
         <p v-if="cartProducts.length === 0" class="no-product-text"> No Products in Cart!</p>
         <div v-else class="row">
-            <div class="col-6">
+            <div class="col-6 product-scroll-section">
                 <CartProduct :products="cartProducts"/>
             </div>
             <div class="col-4">
@@ -18,6 +18,7 @@
                         22F4+JR6, Peelamedu, HUDCO Colony, Coimbatore, Tamil Nadu 641004
                     </p>
                     <button class="checkout-button">Checkout</button>
+                    <img src="https://citationsy.com/images/citationsy_payment_methods.svg" class="payment-img" alt="" srcset="">
                 </div>
             </div>
         </div>
@@ -48,12 +49,10 @@ export default {
 }
 .outer-card {
   border-radius: 10px;
-  padding-top: 20px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding : 20px 15px ;
   max-width: 60%;
   min-height: 400px;
-  max-height: 600px;
+  /* max-height: 600px; */
   margin: auto;
   box-shadow: 0px 0px 6px 2px rgba(221, 221, 221, 0.703);
 }
@@ -122,10 +121,49 @@ h1{
     border: none;
 }
 
+.payment-img{
+  width: 90%;
+  display: block;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.product-scroll-section{
+  overflow: scroll;
+  height: 500px;
+  border: 0.5px solid #dadada;
+  border-radius: 10px ;
+  padding: 5px;
+}
+
+
 .no-product-text{
   margin-top: 20%;
   text-align: center;
   color: #a6a6a6;
+}
+
+@media screen and (max-width: 1000px) {
+  .outer-card{
+    max-width: 90%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .outer-card{
+    max-width: 85%;
+  }
+
+  .row{
+    flex-direction: column;
+  }
+  
+}
+
+@media screen and (max-width: 500px) {
+  .outer-card{
+    max-width: 85%;
+  }
 }
 
 </style>

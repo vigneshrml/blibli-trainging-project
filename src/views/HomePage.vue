@@ -66,13 +66,24 @@ export default {
     },
     handleFilterSubmit() {
       this.products = productData;
+      console.log(this.products)
+      console.log(this.selectedFilterOptions)
         let finalResult = [];
         this.products.forEach((e) => {
           this.selectedFilterOptions.forEach((data) => {
             e[data["category"]] == data["specification"] && finalResult.push(e);
           });
         });
+
+
         this.products = finalResult;
+
+//     const filterResult = this.products.filter((e)=>{
+//        return this.selectedFilterOptions.forEach((data) => {
+//              e[data["category"]] == data["specification"]
+//           });
+//     }) 
+// console.log(filterResult)
     },
   },
 };

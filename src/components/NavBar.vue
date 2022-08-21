@@ -29,7 +29,7 @@
         <span class="cart-badge">{{ $store.state.cart.length }}</span>
         </button>
     </div>
-    <div>
+    <div class="auth">
       <router-link to="/login" class="auth-login">Login</router-link>
       <router-link to="/register" class="auth-register">Register</router-link>
     </div>
@@ -57,7 +57,7 @@ export default {
   }
 };
 </script>
-<style scoped>
+<style>
 .navbar {
   position: sticky;
   z-index: 1;
@@ -87,6 +87,7 @@ export default {
   align-items: center;
   background-color: #ffffff;
   border-radius: 8px;
+  width: auto;
 }
 
 .search-box {

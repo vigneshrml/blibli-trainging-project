@@ -46,7 +46,7 @@ const product = [{
     id : "105",
     image: "https://static-01.daraz.com.bd/p/772dfca63e234887f5f338e113458bc9.jpg",
     name: "Motorola Moto G40 Fusion (6 GB, 128 GB)",
-    brand: "OnePlus",
+    brand: "Motorola",
     offerPrice: 23499,
     realPrice: 27999,
     rating: 4.2,

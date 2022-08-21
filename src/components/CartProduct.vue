@@ -44,6 +44,7 @@
                 name="product-count"
                 :value="data.count"
                 class="product-count-input"
+                disabled
               />
               <button
                 class="product-count-btn"
@@ -58,7 +59,7 @@
               type="button"
               @click="$store.commit('removeFromCart', { productIndex: index })"
             >
-              <ion-icon name="trash-outline"></ion-icon>
+             x
             </button>
           </div>
         </div>
