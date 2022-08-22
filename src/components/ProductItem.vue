@@ -1,6 +1,8 @@
 <template>
   <div class="product-section">
+    <p class="no-product-found" v-if="products.length === 0">No Product Found!</p>
     <div
+      v-else
       class="single-product-entity"
       v-for="(data, index) in products"
       :key="index"
@@ -46,6 +48,13 @@ export default {
     background-color: #DAF3FF;
     font-size: 11px;
     font-weight: 600;
+  }
+
+  .no-product-found{
+    margin: auto;
+    margin-top: 20%;
+    margin-bottom: 20%;
+    color: #9d9d9d;
   }
 
 </style>

@@ -59,7 +59,7 @@
               type="button"
               @click="$store.commit('removeFromCart', { productIndex: index })"
             >
-             x
+             <ion-icon name="trash-outline"></ion-icon>
             </button>
           </div>
         </div>
@@ -112,7 +112,7 @@ p {
   border-radius: 10px;
   width: 100%;
   vertical-align: middle;
-  border: 0.5px solid #d9d9d9;
+  /* border: 0.5px solid #d9d9d9; */
 }
 
 .product-count-detail {
@@ -133,11 +133,15 @@ p {
   outline: none;
 }
 
+ion-icon {
+  color: #da3e00 !important;
+}
+
 .product-delete-btn {
   width: fit-content;
   background-color: transparent;
   border: none;
-  color: #da3e00;
+  color: #da3e00 !important;
   font-weight: bold;
   font-size: 20px;
   border-radius: 8px;

@@ -32,6 +32,7 @@
         </div>
       </div>
     </div>
+    <FooterArea />
   </div>
 </template>
 
@@ -41,6 +42,7 @@ import productData from "@/utils/product";
 import filterOptions from "@/utils/filterOptions";
 import ProductItem from "@/components/ProductItem.vue";
 import FilterBox from "@/components/FilterBox.vue";
+import FooterArea from "@/components/FooterArea.vue";
 
 export default {
   name: "HomePage",
@@ -48,6 +50,7 @@ export default {
     NavBar,
     ProductItem,
     FilterBox,
+    FooterArea,
   },
   data() {
     return {
@@ -61,29 +64,29 @@ export default {
     handleFilterOptionChange(data) {
       this.selectedFilterOptions = data.options;
     },
-    handleFilterClear(){
+    handleFilterClear() {
       this.products = productData;
     },
     handleFilterSubmit() {
       this.products = productData;
       console.log(this.products)
       console.log(this.selectedFilterOptions)
-        let finalResult = [];
-        this.products.forEach((e) => {
-          this.selectedFilterOptions.forEach((data) => {
-            e[data["category"]] == data["specification"] && finalResult.push(e);
-          });
-        });
+      let finalResult = [];
+      this.products.forEach((e) => {
+        const allFiltered = this.selectedFilterOptions.some(
+          (data) => e[data["category"]] == data["specification"]
+        );
+        allFiltered && finalResult.push(e);
+      });
 
+      this.products = finalResult;
 
-        this.products = finalResult;
-
-//     const filterResult = this.products.filter((e)=>{
-//        return this.selectedFilterOptions.forEach((data) => {
-//              e[data["category"]] == data["specification"]
-//           });
-//     }) 
-// console.log(filterResult)
+      //     const filterResult = this.products.filter((e)=>{
+      //        return this.selectedFilterOptions.forEach((data) => {
+      //              e[data["category"]] == data["specification"]
+      //           });
+      //     })
+      // console.log(filterResult)
     },
   },
 };

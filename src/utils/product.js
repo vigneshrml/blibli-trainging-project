@@ -7,8 +7,9 @@ const product = [{
     realPrice: 15999,
     rating: 4.5,
     ram : "4 GB RAM",
-    rom :" 64 GB ROM",
-    reviewCount : 566
+    rom : "64 GB ROM",
+    reviewCount : 566,
+    price : "Under ₹15,000"
 },{
     id : "102",
     image: "https://static-01.daraz.com.bd/p/71a508b7c753b23ebb3f8177b3069fa5.jpg",
@@ -19,7 +20,8 @@ const product = [{
     rating: 4.2,
     ram : "8 GB RAM",
     rom : "128 GB ROM",
-    reviewCount : 78
+    reviewCount : 78,
+    price : "₹15,000 - ₹20,000"
 },{
     id : "103",
     image: "https://specifications-pro.com/wp-content/uploads/2021/11/Google-Pixel-6a-4-600x600.jpg",
@@ -30,7 +32,8 @@ const product = [{
     rating: 4.7,
     ram : "6 GB RAM",
     rom : "128 GB ROM",
-    reviewCount : 45
+    reviewCount : 45,
+    price : "Over ₹50,000"
 },{
     id : "104",
     image: "https://static-01.daraz.com.bd/p/0c7fc5cabd8fea3bb0cb5e46243bfe64.jpg",
@@ -40,8 +43,9 @@ const product = [{
     realPrice: 19699,
     rating: 3.8,
     ram : "4 GB RAM",
-    rom :" 64 GB ROM",
-    reviewCount : 15
+    rom :"64 GB ROM",
+    reviewCount : 15,
+    price : "₹15,000 - ₹20,000"
 },{
     id : "105",
     image: "https://static-01.daraz.com.bd/p/772dfca63e234887f5f338e113458bc9.jpg",
@@ -52,7 +56,8 @@ const product = [{
     rating: 4.2,
     ram : "6 GB RAM",
     rom : "128 GB ROM",
-    reviewCount : 106
+    reviewCount : 106,
+    price : "₹20,000 - ₹30,000"
 },{
     id : "106",
     image: "https://specifications-pro.com/wp-content/uploads/2021/08/iPhone-13-2.jpg",
@@ -63,7 +68,8 @@ const product = [{
     rating: 4.6,
     ram : "8 GB RAM",
     rom : "256 GB ROM",
-    reviewCount : 290
+    reviewCount : 290,
+    price : "Over ₹50,000"
 },{
     id : "107",
     image: "https://static-01.daraz.com.bd/p/126e63e5a685668d9db835056e7c4fdf.jpg",
@@ -74,7 +80,8 @@ const product = [{
     rating: 4.3,
     ram : "8 GB RAM",
     rom : "128 GB ROM",
-    reviewCount :12
+    reviewCount :12,
+    price : "₹20,000 - ₹30,000"
 },{
     id : "108",
     image: "https://www.tek4life.pt/media/catalog/product/cache/2/image/800x800/85e4522595efc69f496374d01ef2bf13/n/o/nothing_phone_1_5g_preto_5.jpg",
@@ -85,7 +92,8 @@ const product = [{
     rating: 4.1,
     ram : "6 GB RAM",
     rom : "128 GB ROM",
-    reviewCount : 90
+    reviewCount : 90,
+    price : "₹20,000 - ₹30,000"
 },{
     id : "109",
     image: "https://static-01.daraz.com.bd/p/284b53f2017846580c6aeaa4a9306c1b.jpg",
@@ -96,7 +104,8 @@ const product = [{
     rating: 3.7,
     ram : "8 GB RAM",
     rom : "128 GB ROM",
-    reviewCount : 34
+    reviewCount : 34,
+    price : "Under ₹15,000"
 },{
     id : "110",
     image: "https://static-01.daraz.com.bd/p/6940d63a500ab7a0df21374042184ee6.jpg",
@@ -106,8 +115,9 @@ const product = [{
     realPrice: 28999,
     rating: 4.3,
     ram : "6 GB RAM",
-    rom :" 32 GB ROM",
-    reviewCount : 78
+    rom : "32 GB ROM",
+    reviewCount : 78,
+    price : "₹20,000 - ₹30,000"
 },{
     id : "111",
     image: "https://static-01.daraz.com.bd/p/e0db0bd7a18b81871f7cc0980f3b5622.jpg",
@@ -117,8 +127,9 @@ const product = [{
     realPrice: 13999,
     rating: 4.2,
     ram : "4 GB RAM",
-    rom :" 64 GB ROM",
-    reviewCount : 93
+    rom : "64 GB ROM",
+    reviewCount : 93,
+    price : "Under ₹15,000"
 },{
     id : "112",
     image: "https://static-01.daraz.com.bd/p/89e5e7db1355dd161f7ac488cf8a7937.jpg",
@@ -128,8 +139,9 @@ const product = [{
     realPrice: 31449,
     rating: 3.9,
     ram : "6 GB RAM",
-    rom :" 64 GB ROM",
-    reviewCount : 13
+    rom : "64 GB ROM",
+    reviewCount : 13,
+    price : "₹20,000 - ₹30,000"
 }];
 
 export default product;

@@ -131,7 +131,7 @@ h1{
 .product-scroll-section{
   overflow: scroll;
   height: 500px;
-  border: 0.5px solid #dadada;
+  border: 0.3px solid #f0f0f0;
   border-radius: 10px ;
   padding: 5px;
 }
