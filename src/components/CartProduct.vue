@@ -34,7 +34,7 @@
                 class="product-count-btn"
                 type="button"
                 @click="
-                  $store.commit('decreaseQuantity', { productId: data.id })
+                  $store.dispatch('DECREASE_PRODUCT_QUANTITY', { productId: data.id })
                 "
               >
                 -
@@ -49,7 +49,7 @@
               <button
                 class="product-count-btn"
                 type="button"
-                @click="$store.commit('addToCart', { data })"
+                @click="$store.dispatch('ADD_TO_CART', { product : data })"
               >
                 +
               </button>
@@ -57,7 +57,7 @@
             <button
               class="product-delete-btn"
               type="button"
-              @click="$store.commit('removeFromCart', { productIndex: index })"
+              @click="$store.dispatch('REMOVE_FROM_CART', { productIndex: index })"
             >
              <ion-icon name="trash-outline"></ion-icon>
             </button>
@@ -67,17 +67,7 @@
     </div>
   </div>
 </template>
-<script>
-export default {
-  name: "CartProduct",
-  props: {
-    products: {
-      type: Object,
-      default: () => {},
-    },
-  },
-};
-</script>
+<script src="@/components/script/CartProduct.js"></script>
 <style scoped>
 .single-cart-product {
   margin: 5px;

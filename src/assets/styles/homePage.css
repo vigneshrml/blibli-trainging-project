@@ -40,6 +40,10 @@
   border-radius: 10px;
   padding: 10px;
   box-shadow: 0px 0px 6px 1px rgba(221, 221, 221, 0.703);
+  min-height: 430px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .product-card-image {
@@ -71,12 +75,12 @@
   /* flex-direction: row; */
 }
 
-.single-product-entity {
+/* .single-product-entity {
   box-sizing: border-box;
   padding: 5px;
   flex-basis: 20%;
   margin-bottom: 20px;
-}
+} */
 
 .product-price {
   font-size: 15px;

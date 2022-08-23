@@ -1,6 +1,5 @@
 <template>
   <div>
-    <NavBar />
     <div class="container">
       <div class="outer-card">
         <p v-if="cartProducts.length === 0" class="no-product-text"> No Products in Cart!</p>
@@ -11,7 +10,7 @@
             <div class="col-4">
                 <div class="checkout-card">
                     <p class="total-style">Total:</p>
-                    <h1>₹{{$store.getters.totalPrice}}</h1>
+                    <h1>₹{{ totalPrice }}</h1>
                     <hr class="cart-hr">
                     <p class="checkout-subtitle">Delivery Address</p>
                     <p class="checkout-details-subtilte">
@@ -26,23 +25,7 @@
     </div>
   </div>
 </template>
-<script>
-import NavBar from "@/components/NavBar.vue";
-import CartProduct from "@/components/CartProduct.vue";
-
-export default {
-  name: "CartPage",
-  components: {
-    NavBar,
-    CartProduct
-  },
-  data(){
-    return{
-        cartProducts : this.$store.state.cart
-    }
-  }
-};
-</script>
+<script src="@/views/script/CartPage.js"></script>
 <style scoped>
 .container {
   margin-top: 30px;

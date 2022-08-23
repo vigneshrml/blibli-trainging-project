@@ -18,6 +18,12 @@
           placeholder="Enter your username"
         />
       </div>
+      <p
+        v-if="validateUsername"
+        style="color: red; font-size: 12px; margin : 0; margin-bottom : 15px;"
+      >
+        Please Enter within 10 letters!
+      </p>
       <div class="form-control">
         <label for="username">Password</label>
         <input
@@ -29,6 +35,12 @@
           placeholder="Enter your password"
         />
       </div>
+      <p
+        v-if="validatePassword"
+        style="color: red; font-size: 12px; margin : 0; margin-bottom : 15px;"
+      >
+        Password should be greater than 8 letters!
+      </p>
       <p
         v-if="!validate"
         style="color: red; font-size: 14px; text-align: center"
@@ -45,7 +57,7 @@
     </form>
   </div>
 </template>
-<script src="./LoginPage.js"></script>
+<script src="@/views/script/LoginPage.js"></script>
 <style>
 @import "@/assets/styles/authPage.css";
 .error {

@@ -16,6 +16,18 @@ export default {
         } else {
           this.validate = false;
         }
-      }
+      },
+      // validateLimitations(){
+      //   console.log("calledfunc")
+      //   return this.currentUsername.length > 10 ? true : false;
+      // }
     },
+     computed : {
+      validateUsername(){
+        return this.currentUsername.length > 10 ? true : false;
+      },
+      validatePassword(){
+        return this.currentPassword && this.currentPassword.length < 9 ? true : false;
+      }
+    }
   };

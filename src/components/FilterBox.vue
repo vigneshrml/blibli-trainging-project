@@ -11,7 +11,7 @@
         />
       </span>
     </div>
-    <hr class="filter-hr" v-if="index != filterItems.length - 1" />
+    <hr class="filter-hr" />
     <div
       class="filter-entity"
       v-for="(data, index) in filterItems"
@@ -23,13 +23,6 @@
         v-for="(singleData, i) in data.checkBoxs"
         :key="i"
       >
-        <!-- <input
-          type="checkbox"
-          class="filter-checkbox-option"
-          :name="singleData"
-          @change="handleCheck($event)"
-          :value="{ category: data.category, specification: singleData }"
-        /> -->
         <input
           type="checkbox"
           class="filter-checkbox-option"
@@ -45,53 +38,13 @@
       <button type="button" class="action-button" @click="applyFilter()">
         Apply filter
       </button>
-      <button type="button" class="clear-filter-btn" @click="clearFilter()">Clear</button>
+      <button type="button" class="clear-filter-btn" @click="clearFilter()">
+        Clear
+      </button>
     </div>
   </div>
 </template>
-<script>
-export default {
-  name: "FilterBox",
-  data() {
-    return {
-      selectedFilter: [],
-    };
-  },
-  props: ["filterItems"],
-  methods: {
-    applyFilter() {
-      this.$emit("filterOn");
-    },
-    clearFilter(){
-      this.selectedFilter = [];
-      this.$emit("filterClear");
-      const allCheckbox = document.getElementsByClassName("filter-checkbox-option");
-     for (var i = 0; i < allCheckbox.length; i++) {
-            if (allCheckbox[i].type == 'checkbox')
-                allCheckbox[i].checked = false;
-        }
-        
-    },
-    handleCheck(event) {
-      var updatedList = [...this.selectedFilter];
-      if (event.target.checked) {
-        updatedList = [...this.selectedFilter, event.target._value];
-      } else {
-        updatedList.splice(this.selectedFilter.indexOf(event.target._value), 1);
-      }
-      this.selectedFilter = updatedList;
-      console.log(updatedList)
-    },
-  },
-  watch: {
-    selectedFilter() {
-      this.$emit("filterChange", {
-        options: this.selectedFilter,
-      });
-    },
-  },
-};
-</script>
+<script src="@/components/script/FilterBox.js"></script>
 <style>
 .clear-filter-btn {
   background-color: transparent;

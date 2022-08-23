@@ -1,6 +1,5 @@
 <template>
   <div>
-    <NavBar />
     <div class="home-container">
       <div class="side-bar">
         <FilterBox
@@ -15,7 +14,7 @@
           <span style="margin-right: 10px">View filter</span>
           <ion-icon name="filter-outline"></ion-icon>
         </button>
-        <div class="outer-card">
+        <div class="outer-card" v-if="!$store.state.product.loader">
           <div v-if="selectedFilterOptions.length > 0">
             <p class="filtered-by-text">Filtered By:</p>
             <div class="product-filter">
@@ -28,70 +27,36 @@
               </div>
             </div>
           </div>
-          <ProductItem :products="products" />
+          <div class="product-section">
+            <p class="no-product-found" v-if="productList.length === 0">
+              No Product Found!
+            </p>
+            <ProductItem
+              v-for="(product, index) in productList"
+              :product="product"
+              :key="index"
+            />
+          </div>
         </div>
+        <SpinnerAnimation v-else class="product-spinner" />
       </div>
     </div>
-    <FooterArea />
   </div>
 </template>
 
-<script>
-import NavBar from "@/components/NavBar.vue";
-import productData from "@/utils/product";
-import filterOptions from "@/utils/filterOptions";
-import ProductItem from "@/components/ProductItem.vue";
-import FilterBox from "@/components/FilterBox.vue";
-import FooterArea from "@/components/FooterArea.vue";
-
-export default {
-  name: "HomePage",
-  components: {
-    NavBar,
-    ProductItem,
-    FilterBox,
-    FooterArea,
-  },
-  data() {
-    return {
-      products: productData,
-      // orgProduct: productData,
-      filters: filterOptions,
-      selectedFilterOptions: [],
-    };
-  },
-  methods: {
-    handleFilterOptionChange(data) {
-      this.selectedFilterOptions = data.options;
-    },
-    handleFilterClear() {
-      this.products = productData;
-    },
-    handleFilterSubmit() {
-      this.products = productData;
-      console.log(this.products)
-      console.log(this.selectedFilterOptions)
-      let finalResult = [];
-      this.products.forEach((e) => {
-        const allFiltered = this.selectedFilterOptions.some(
-          (data) => e[data["category"]] == data["specification"]
-        );
-        allFiltered && finalResult.push(e);
-      });
-
-      this.products = finalResult;
-
-      //     const filterResult = this.products.filter((e)=>{
-      //        return this.selectedFilterOptions.forEach((data) => {
-      //              e[data["category"]] == data["specification"]
-      //           });
-      //     })
-      // console.log(filterResult)
-    },
-  },
-};
-</script>
+<script src="@/views/script/HomePage.js"></script>
 
 <style>
 @import "@/assets/styles/homePage.css";
+
+.no-product-found {
+  margin: auto;
+  margin-top: 20%;
+  margin-bottom: 20%;
+  color: #9d9d9d;
+}
+
+.product-spinner {
+  margin-top: 20%;
+}
 </style>

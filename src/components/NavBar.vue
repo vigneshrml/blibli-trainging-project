@@ -8,8 +8,13 @@
       srcset=""
     />
     <ul class="nav-list">
-      <li v-for="(data, index) in navList" :key="index">{{ data }}</li>
-      <li>{{ title }}</li>
+      <router-link
+        tag="li"
+        :to="data.path"
+        v-for="(data, index) in navList"
+        :key="index"
+        >{{ data.label }}</router-link
+      >
     </ul>
     <div class="search-outer-box">
       <input
@@ -17,17 +22,17 @@
         class="search-box"
         name="search"
         placeholder="Search product"
-        v-model="title"
+        v-model="itemName"
       />
-      <button class="search-btn" type="button" @click="alertSearch()">
+      <button class="search-btn" type="button" @click="searchItem()">
         <ion-icon name="search-outline"></ion-icon>
       </button>
     </div>
     <div class="cart-section">
       <button class="cart-btn" @click="moveToCartPage()">
         <ion-icon name="cart-outline"></ion-icon>
-        <span class="cart-badge">{{ $store.state.cart.length }}</span>
-        </button>
+        <span class="cart-badge">{{ $store.state.cart.cart.length }}</span>
+      </button>
     </div>
     <div class="auth">
       <router-link to="/login" class="auth-login">Login</router-link>
@@ -35,28 +40,7 @@
     </div>
   </nav>
 </template>
-<script>
-export default {
-  data() {
-    return {
-      navList: ["Home", "Products", "Company", "About", "Contact"],
-      disableAddToCart : false,
-      title : ""
-    };
-  },
-  methods: {
-    alertSearch(){
-        alert(this.title)
-    },
-    moveToCartPage(){
-      this.$router.push("/cart");
-    }
-  },
-  mounted(){
-    console.log("Componented Mounted")
-  }
-};
-</script>
+<script src="@/components/script/NavBar.js"></script>
 <style>
 .navbar {
   position: sticky;
@@ -141,7 +125,7 @@ ion-icon {
   color: rgb(255, 255, 255);
 }
 
-.cart-btn{
+.cart-btn {
   background: transparent;
   outline: none;
   border: none;
@@ -150,8 +134,8 @@ ion-icon {
   flex-direction: row;
 }
 
-.cart-badge{
-  background-color: #ED1C24;
+.cart-badge {
+  background-color: #ed1c24;
   font-size: 11px;
   font-weight: 600;
   color: #ffffff;
@@ -159,5 +143,4 @@ ion-icon {
   padding: 4px 7px;
   border-radius: 10px;
 }
-
 </style>
