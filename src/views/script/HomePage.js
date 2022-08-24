@@ -60,20 +60,21 @@ export default {
   computed: {
     ...mapGetters({
       productList: "getAllProduct",
+      itemName : "getItemName"
     }),
   },
   watch: {
     $route() {
       // react to route changes...
       // console.log(to,from)
-      this.$store.commit("setLoaderTrue");
-      this.$store.dispatch("SEARCH_PRODUCT", this.$route.query.itemName)
+      // this.$store.commit("setLoaderTrue");
+      this.$store.dispatch("GET_ALL_PRODUCT", this.$route.query.itemName)
     }
   },
   created() {
     if(!this.$route.query.itemName)
       this.$store.dispatch("GET_ALL_PRODUCT");
     else
-      this.$store.dispatch("SEARCH_PRODUCT", this.$route.query.itemName)
+      this.$store.dispatch("GET_ALL_PRODUCT", this.$route.query.itemName)
   },
 };

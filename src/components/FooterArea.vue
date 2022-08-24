@@ -16,7 +16,7 @@ export default {
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-top: 15%;
+        /* margin-top: 15%; */
     }
     .footer-title{
         text-align: center;

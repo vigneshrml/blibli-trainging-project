@@ -26,8 +26,8 @@
             ⭐ {{ data.rating }} rating
             <small style="color: #999999">({{ data.reviewCount }})</small>
           </p> -->
-          <div class="badge">{{ data.ram }}</div>
-          <div class="badge">{{ data.rom }}</div>
+          <!-- <div class="badge">{{ data.ram }}</div>
+          <div class="badge">{{ data.rom }}</div> -->
           <div class="product-outer-row">
             <div class="product-count-detail">
               <button

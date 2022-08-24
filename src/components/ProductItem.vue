@@ -1,5 +1,5 @@
 <template>
-  <div class="single-product-entity">
+  <div class="single-product-entity" @click="redirectPage(product)">
     <div class="product-card" >
       <div>
         <img :src="product.image" class="product-card-image" alt="" />
@@ -17,10 +17,10 @@
           ⭐ {{ product.rating }} rating
           <small style="color: #999999">({{ product.reviewCount }})</small>
         </p>
-        <div class="badge">{{ product.ram }}</div>
-        <div class="badge">{{ product.rom }}</div>
+        <!-- <div class="badge">{{ product.ram }}</div>
+        <div class="badge">{{ product.rom }}</div> -->
         <ButtonComponent
-          label="Add to Cart"
+          label="Add to Cart" 
           @onClick="$store.dispatch('ADD_TO_CART',  {product} )"
           type="button"
         />
@@ -46,4 +46,5 @@
   flex-basis: 20%;
   margin-bottom: 20px;
 }
+
 </style>

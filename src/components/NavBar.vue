@@ -8,12 +8,11 @@
       srcset=""
     />
     <ul class="nav-list">
-      <router-link
-        tag="li"
-        :to="data.path"
+      <li
+        @click="$router.push(data.path)"
         v-for="(data, index) in navList"
         :key="index"
-        >{{ data.label }}</router-link
+        >{{ data.label }}</li
       >
     </ul>
     <div class="search-outer-box">
@@ -22,7 +21,7 @@
         class="search-box"
         name="search"
         placeholder="Search product"
-        v-model="itemName"
+        v-model="searchName"
       />
       <button class="search-btn" type="button" @click="searchItem()">
         <ion-icon name="search-outline"></ion-icon>
@@ -63,6 +62,10 @@
   font-size: 16px;
   margin: 0;
   margin-right: 15px;
+}
+
+.nav-list > li:hover {
+  cursor: pointer;
 }
 
 .search-outer-box {

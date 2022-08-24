@@ -5,6 +5,7 @@ import HomePage from "@/views/HomePage.vue";
 import LoginPage from "@/views/LoginPage.vue";
 import RegisterPage from "@/views/RegisterPage.vue";
 import CartPage from "@/views/CartPage.vue";
+import ProductDescription from "@/views/ProductDescription";
 
 Vue.use(Router);
 
@@ -17,10 +18,15 @@ export default new Router({
       component: HomePage,
     },
     {
-      path: "/products",
-      name: "HomePage",
-      component: HomePage,
+      path : "/product/:itemSku",
+      name : "ProductDescription",
+      component : ProductDescription
     },
+    // {
+    //   path: "/products",
+    //   name: "HomePage",
+    //   component: HomePage,
+    // },
     {
       path: "/login",
       name: "LoginPage",

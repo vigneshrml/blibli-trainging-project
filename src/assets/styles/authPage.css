@@ -90,3 +90,23 @@ margin-left: 10px;
     margin-top: 20px;
     display: block;
 }
+
+.badge-block{
+    width: fit-content;
+    display: block;
+    margin: auto;
+    margin-top: 5%;
+}
+
+.login-badge{
+    width: fit-content;
+  padding: 3px 10px;
+  font-size: 15px;
+  font-weight: 500;
+  display: inline-block;
+  border: 1.5px solid #e3e3e3;
+  border-radius: 15px;
+  margin-bottom: 5px;
+  color: #0096da;
+  margin-right: 5px;
+}

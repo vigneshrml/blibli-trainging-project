@@ -1,7 +1,8 @@
 export default {
+  name : "NavBar",
     data() {
       return {
-        itemName : "",
+        searchName : "",
         navList: [
           {
             label: "Home",
@@ -35,13 +36,10 @@ export default {
         this.$router.push("/cart");
       },
       searchItem(){
-        // console.log(this.itemName)
-        this.$router.push({ path: "/products", query: { itemName: this.itemName } })
-        // this.$store.dispatch("SEARCH_PRODUCT", this.itemName)
+        console.log(this.searchName)
+        this.$router.push({ path: "/", query: { itemName: this.searchName } })
+        // this.$store.dispatch("GET_ALL_PRODUCT", this.searchName)
+        // this.$store.dispatch("GET_ALL_PRODUCT");
       }
-    },
-    mounted() {
-      console.log(this.$store);
-      
-    },
+    }
   };

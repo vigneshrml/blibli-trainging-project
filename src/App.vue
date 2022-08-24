@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <NavBar/>
-    <router-view />
+    <div class="app-container">
+      <router-view />
+    </div>
     <FooterArea/>
   </div>
 </template>
@@ -117,6 +119,9 @@ a {
   text-decoration: none;
 }
 
+.app-container{
+  min-height: 100vh;
+}
 
 
 </style>

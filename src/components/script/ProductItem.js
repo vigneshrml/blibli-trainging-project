@@ -13,5 +13,8 @@ export default {
     getPercentage(realPrice, offerPrice) {
       return Math.floor(((realPrice - offerPrice) / realPrice) * 100);
     },
+    redirectPage({ itemSku }){
+      this.$router.push(`/product/${itemSku}`)
+    }
   },
 };
