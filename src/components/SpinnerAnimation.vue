@@ -3,11 +3,7 @@
     <div class="spinner"></div>
   </div>
 </template>
-<script>
-export default {
-  name: "SpinnerAnimation",
-};
-</script>
+<script src="@/components/script/SpinnerAnimation.js"></script>
 <style>
 .spinner-margin {
   width: fit-content;

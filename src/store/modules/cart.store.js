@@ -8,7 +8,7 @@ export default {
         state.cart.map((data)=>{
           total += data.offerPrice * data.count
         })
-        return total
+        return total;
       },
       getAllCartProducts(state){
         return state.cart;

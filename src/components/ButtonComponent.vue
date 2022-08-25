@@ -3,26 +3,7 @@
         <button :type="type" @click="onClick()" class="action-button">{{ label }}</button>
     </div>
 </template>
-<script>
-export default {
-    name : "ButtonComponent",
-    props : {
-        label : {
-            type : String,
-            default : "Submit",
-        },
-        type : {
-            type : String,
-            default : "button"
-        }
-    },
-    methods : {
-        onClick(){
-            this.$emit('onClick')
-        }
-    }
-}
-</script>
+<script src="@/components/script/ButtonComponent.js"></script>
 <style>
 .action-button{
     background-color: #0096DA;

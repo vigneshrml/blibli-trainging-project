@@ -1,5 +1,5 @@
 <template>
-  <div class="single-product-entity" @click="redirectPage(product)">
+  <div class="single-product-entity">
     <div class="product-card" >
       <div>
         <img :src="product.image" class="product-card-image" alt="" />

@@ -3,11 +3,7 @@
         <p class="footer-title">Blibli © 2022 | All Rights Reserved for Blibli and Company.</p>
     </div>
 </template>
-<script>
-export default {
-    name : "FooterArea"
-}
-</script>
+<script src="@/components/script/FooterArea.js"></script>
 <style>
     .footer-section{
         background-color: #F1F1F1;
