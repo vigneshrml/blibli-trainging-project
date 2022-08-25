@@ -1,7 +1,8 @@
 <template>
   <div class="single-product-entity">
-    <div class="product-card" >
-      <div>
+    <div class="product-card">
+        <div @click="redirectPage(product)">
+          <div>
         <img :src="product.image" class="product-card-image" alt="" />
       </div>
       <div class="product-card-body">
@@ -19,12 +20,14 @@
         </p>
         <!-- <div class="badge">{{ product.ram }}</div>
         <div class="badge">{{ product.rom }}</div> -->
-        <ButtonComponent
+        
+      </div>
+        </div>
+      <ButtonComponent
           label="Add to Cart" 
           @onClick="$store.dispatch('ADD_TO_CART',  {product} )"
           type="button"
         />
-      </div>
     </div>
   </div>
 </template>
